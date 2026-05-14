@@ -44,9 +44,6 @@ export async function chatWithAI(history: Message[], userPreferences: any) {
       parts: [{ text: msg.content }]
     }));
 
-    // Append context to the last message or as a system prompt update?
-    // The SDK supports systemInstruction in config.
-    
     const response = await ai.models.generateContent({
       model: "gemini-3-flash-preview",
       contents: contents,
